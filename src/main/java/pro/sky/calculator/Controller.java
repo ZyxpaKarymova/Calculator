@@ -32,7 +32,7 @@ public class Controller {
     }
     @GetMapping(path = "/calculator/divide")
     public String division (@RequestParam(value = "num1",required = false) int num1, @RequestParam(value = "num2",required = false) int num2){
-      return calculatorService.division(num1, num2);
+              return calculatorService.division(num1, num2);
     }
 }
 

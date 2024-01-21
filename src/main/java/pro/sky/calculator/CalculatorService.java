@@ -13,9 +13,9 @@ public class CalculatorService {
     }
 
     public String addition(int num1, int num2) {
-        int sum = num1 + num2;
-        return num1 + " + " + num2 + " = " + sum;
 
+            int sum = num1 + num2;
+        return num1 + " + " + num2 + " = " + sum;
     }
 
     public String substraction(int num1, int num2) {
@@ -23,16 +23,19 @@ public class CalculatorService {
         return num1 + " - " + num2 + " = " + sub;
     }
 
-    @GetMapping(path = "/calculator/multiply")
     public String multiplication(int num1, int num2) {
         int mul = num1 * num2;
         return num1 + " * " + num2 + " = " + mul;
     }
 
-    @GetMapping(path = "/calculator/divide")
     public String division(int num1, int num2) {
-        int div = num1 / num2;
-        return num1 + " / " + num2 + " = " + div;
+        if ((num2 == 0)){
+            return "Division by zero";
+        }
+        else{
+            int div = num1 / num2;
+            return num1 + " / " + num2 + " = " + div;
+        }
     }
 }
 
